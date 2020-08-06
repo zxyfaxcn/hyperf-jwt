@@ -124,7 +124,7 @@ class Jwt
     public function verifyToken(string $Token)
     {
         $tokenArray = explode('.', $Token);
-        if (3 != count($tokenArray)) throw new TokenValidException('token不存在', 401);
+        if (3 != count($tokenArray)) throw new TokenValidException('token格式不对', 401);
         list($base64header, $base64payload, $sign) = $tokenArray;
         //获取jwt算法
         try {
